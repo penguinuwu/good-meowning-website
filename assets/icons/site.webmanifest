@@ -1,0 +1,19 @@
+{
+    "name": "Good Meowning",
+    "short_name": "Good Meowning",
+    "icons": [
+        {
+            "src": "/assets/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#f6eeee",
+    "background_color": "#f6eeee",
+    "display": "standalone"
+}
