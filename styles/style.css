@@ -1,0 +1,52 @@
+html {
+  /* http://www.rw-designer.com/cursor-set/kawaiikittymd */
+  cursor: url("../assets/cursor/default.cur"), default;
+}
+
+body {
+  background-color: #ffd1dc;
+  font-family: "Noto Sans", sans-serif;
+  text-align: center;
+
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  height: 100vh;
+}
+
+div#meow {
+  background-color: #fbfdfa;
+  width: 80%;
+  margin: auto;
+  border-radius: 5%;
+  box-shadow: 0.5em 0.5em 0.5em gray;
+}
+div#meow > img {
+  width: 60%;
+}
+div#meow > h1 {
+  font-family: "Indie Flower", cursive;
+  cursor: url("../assets/cursor/text.cur"), text;
+}
+
+footer {
+  margin: auto auto 7% auto;
+}
+footer button:hover {
+  /* cursor animation lol */
+  animation-name: animate-pointer;
+  animation-duration: 800ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes animate-pointer {
+  0% {
+    cursor: url("../assets/cursor/pointer1.cur"), auto;
+  }
+  100% {
+    cursor: url("../assets/cursor/pointer2.cur"), auto;
+  }
+}

@@ -1,0 +1,38 @@
+.star {
+  position: fixed;
+  pointer-events: none; 
+}
+
+.star::before,
+.star::after {
+  position: absolute;
+  content: "\2726";
+  font-size: 1em;
+
+  animation-name: fall-down;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+@keyframes fall-down {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 5000%);
+  }
+}
+
+.star::before {
+  color: transparent;
+  /* text-shadow: 0 0 0.3em #dcffd1; */
+  text-shadow: 0 0 0.3em #fdfd96;
+}
+
+.star::after {
+  /* background: #dcffd1; */
+  background: #fdfd96;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

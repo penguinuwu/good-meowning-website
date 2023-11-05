@@ -14,6 +14,10 @@
     <link rel="mask-icon" href="./assets/icons/safari-pinned-tab.svg" color="#645f60" />
     <link rel="shortcut icon" href="./assets/icons/favicon.ico" />
 
+    <!-- styles -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/cursortrail.css" />
+
     <!-- windows icon -->
     <meta name="msapplication-TileColor" content="#f6eeee" />
     <meta name="msapplication-config" content="./assets/icons/browserconfig.xml" />
@@ -22,52 +26,39 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- google icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
-    <style>
-      body {
-        background-color: #fbfdfa;
-        font-family: 'Noto Sans', sans-serif;
-        text-align: center;
-
-        display: grid;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        margin: 0;
-        height: 100vh;
-      }
-
-      div#meow {
-        margin: auto;
-        font-family: 'Indie Flower', cursive;
-      }
-
-      div#meow > img {
-        width: 50%;
-        height: auto;
-      }
-
-      footer {
-        margin: auto auto 10% auto;
-        text-align: center;
-      }
-    </style>
+    <!-- cursor trail -->
+    <script type="module" src="./modules/main.js"></script>
   </head>
 
   <body>
     <div id="meow">
-      <img src="./assets/cat-450ms.gif" />
+      <img
+        src="./assets/cat-450ms.gif"
+        alt="good meowning!"
+        title="good meowning!"
+        draggable="false"
+      />
       <h1>good meowning ~</h1>
     </div>
 
     <footer>
       <small>
-        <span class="material-symbols-outlined">favorite</span>
+        <button class="material-symbols-outlined" id="toggle-cursor-trail">favorite</button>
+        <noscript>
+          <br />
+          enable javascript please im begging its really funny i promise
+        </noscript>
       </small>
     </footer>
   </body>
