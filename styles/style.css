@@ -37,6 +37,7 @@ footer {
 }
 footer button:hover {
   /* cursor animation lol */
+  /* https://jordaneldredge.com/blog/rendering-animated-ani-cursors-in-the-browser/ */
   animation-name: animate-pointer;
   animation-duration: 800ms;
   animation-timing-function: linear;

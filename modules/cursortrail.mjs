@@ -7,41 +7,66 @@
 const startCursorTrail = () => {
   const abortController = new AbortController();
 
-  let mouseX = undefined;
-  let mouseY = undefined;
+  let coords = { x: undefined, y: undefined };
 
-  document.body.addEventListener(
-    "mouseleave",
-    (event) => {
-      mouseX = undefined;
-      mouseY = undefined;
-      console.debug("leave", event);
-    },
-    { signal: abortController.signal }
-  );
+  // pointing devices leaving events
+  const leaveEvent = (eventType) => {
+    return (event) => {
+      coords.x = undefined;
+      coords.y = undefined;
+      console.debug(eventType, event);
+    };
+  };
+  document.body.addEventListener("mouseleave", leaveEvent("mouseleave"), {
+    signal: abortController.signal,
+  });
+  document.body.addEventListener("touchend", leaveEvent("touchend"), {
+    signal: abortController.signal,
+  });
 
+  // touchscreen movement events
+  const touchEvent = (eventType) => {
+    return (event) => {
+      const touch = event.touches.item(0);
+      if (touch === null) {
+        console.debug(`${eventType} no movement?`, event);
+      } else {
+        coords.x = touch.clientX;
+        coords.y = touch.clientY;
+        console.debug(eventType, coords);
+      }
+    };
+  };
+  document.body.addEventListener("touchmove", touchEvent("touchmove"), {
+    signal: abortController.signal,
+  });
+  document.body.addEventListener("touchstart", touchEvent("touchstart"), {
+    signal: abortController.signal,
+  });
+
+  // mouse movement events
   document.body.addEventListener(
     "mousemove",
     (event) => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
-      console.debug("move", mouseX, mouseY);
+      coords.x = event.clientX;
+      coords.y = event.clientY;
+      console.debug("mousemove", coords.x, coords.y);
     },
     { signal: abortController.signal }
   );
 
   // game loop in 60fps lol
   const intervalID = setInterval(() => {
-    if (mouseX === undefined || mouseY === undefined) {
-      console.debug("return", mouseX, mouseY);
+    if (coords.x === undefined || coords.y === undefined) {
+      console.debug("return", coords);
       return;
     }
 
     // create 3 spans of different radii around from the cursor
     [10, 30, 60].forEach((radius) => {
       const star = document.createElement("span");
-      const left = mouseX + Math.round(radius * (Math.random() - 0.5));
-      const top = mouseY + Math.round(radius * (Math.random() - 0.5));
+      const left = coords.x + Math.round(radius * (Math.random() - 0.5));
+      const top = coords.y + Math.round(radius * (Math.random() - 0.5));
 
       star.className = "star";
       star.style.top = `${top}px`;

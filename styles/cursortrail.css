@@ -25,12 +25,10 @@
 
 .star::before {
   color: transparent;
-  /* text-shadow: 0 0 0.3em #dcffd1; */
   text-shadow: 0 0 0.3em #fdfd96;
 }
 
 .star::after {
-  /* background: #dcffd1; */
   background: #fdfd96;
   background-clip: text;
   -webkit-background-clip: text;
