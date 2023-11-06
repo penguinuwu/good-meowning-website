@@ -23,6 +23,7 @@ div#meow {
   margin: auto;
   border-radius: 5%;
   box-shadow: 0.5em 0.5em 0.5em gray;
+  animation: 600ms ease-in fade-in;
 }
 div#meow > img {
   width: 60%;
@@ -30,10 +31,20 @@ div#meow > img {
 div#meow > h1 {
   font-family: "Indie Flower", cursive;
   cursor: url("../assets/cursor/text.cur"), text;
+  animation: 1000ms ease-in fade-in;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 footer {
   margin: auto auto 7% auto;
+  animation: 1000ms ease-in fade-in;
 }
 footer button:hover {
   /* cursor animation lol */
