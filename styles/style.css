@@ -24,13 +24,21 @@ div#meow {
   border-radius: 5%;
   box-shadow: 0.5em 0.5em 0.5em gray;
   animation: 600ms ease-in fade-in;
+
+  /* unselectable objects */
+  /* https://stackoverflow.com/a/4448972/ */
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  /* http://ie.microsoft.com/testdrive/HTML5/msUserSelect/ */
+  -ms-user-select: none;
+  user-select: none;
 }
 div#meow > img {
   width: 60%;
 }
 div#meow > h1 {
   font-family: "Indie Flower", cursive;
-  cursor: url("../assets/cursor/text.cur"), text;
   animation: 1000ms ease-in fade-in;
 }
 @keyframes fade-in {
