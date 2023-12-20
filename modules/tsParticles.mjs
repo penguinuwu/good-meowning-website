@@ -6,19 +6,13 @@ import { options as snowOptions } from "https://cdn.jsdelivr.net/npm/tsparticles
 import { options as linkOptions } from "https://cdn.jsdelivr.net/npm/tsparticles-preset-links@2.12.0/esm/options.js/+esm";
 
 async function loadParticles(options) {
-  console.log(options);
   await loadFull(tsParticles);
-
-  console.log(
-    await tsParticles.load({
-      id: "tsparticles",
-      options: options,
-    })
-  );
+  console.debug(await tsParticles.load({ id: "tsparticles", options: options }));
 }
 
 // epic effect colour mods
 snowOptions.background.color = "#333333";
+snowOptions.particles.color = "#ffd1dc";
 linkOptions.background.color = "#ffd1dc";
 linkOptions.particles.color = "#000000";
 linkOptions.particles.links.color = "#000000";

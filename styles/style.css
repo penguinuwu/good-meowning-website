@@ -46,11 +46,13 @@ footer {
   margin: auto auto 7% auto;
   animation: 1000ms ease-in fade-in;
 }
-footer button {
+footer button#nice-button {
   width: 4em;
   height: 2em;
+  font-size: 2em;
+  color: #ff85a2;
 }
-footer button:hover {
+footer button#nice-button:hover {
   /* cursor animation lol */
   /* https://jordaneldredge.com/blog/rendering-animated-ani-cursors-in-the-browser/ */
   animation-name: animate-pointer;
