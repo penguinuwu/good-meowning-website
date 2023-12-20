@@ -1,20 +1,25 @@
 import { startCursorTrail, stopCursorTrail } from "./cursortrail.mjs";
-import { loadParticles } from "./tsParticles.mjs";
+import { allOptions, loadParticles } from "./tsParticles.mjs";
 
-const toggleButtonNode = document.getElementById("toggle-cursor-trail");
+const bodyNode = document.getElementById("body");
+const toggleButtonNode = document.getElementById("nice-button");
 let hasCursorTrails = false;
 let abortController = undefined;
 let intervalID = undefined;
 
 /**
- * toggle cursor trail
+ * toggle button
  */
-const toggleCursorTrail = () => {
+const toggleButton = () => {
   if (hasCursorTrails && intervalID !== undefined && abortController !== undefined) {
     console.debug("toggling off");
 
     // setting this first as a lock kinda lmao
     hasCursorTrails = false;
+
+    // load light theme particles
+    loadParticles(allOptions.light);
+    bodyNode.style.backgroundColor = allOptions.light.background.color;
 
     // stop cursor trails
     stopCursorTrail(abortController, intervalID);
@@ -22,12 +27,16 @@ const toggleCursorTrail = () => {
     intervalID = undefined;
     console.debug("toggled off", abortController, intervalID);
 
-    toggleButtonNode.style.color = "#dd2e44";
+    toggleButtonNode.style.color = allOptions.dark.background.color;
   } else if (!hasCursorTrails && intervalID === undefined && abortController === undefined) {
     console.debug("toggling on");
 
     // setting this first as a lock kinda lmao
     hasCursorTrails = true;
+
+    // load dark theme particles
+    loadParticles(allOptions.dark);
+    bodyNode.style.backgroundColor = allOptions.dark.background.color;
 
     // start cursor trails
     ({ abortController, intervalID } = startCursorTrail());
@@ -40,10 +49,8 @@ const toggleCursorTrail = () => {
   }
 };
 
-// start cursor trails by default
-toggleCursorTrail();
-
 // add toggle function to button
-toggleButtonNode.addEventListener("click", toggleCursorTrail);
+toggleButtonNode.addEventListener("click", toggleButton);
 
-loadParticles();
+// start off funny effects
+toggleButton();
