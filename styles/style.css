@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background-color: #ffd1dc;
+  background-color: #333333;
   font-family: "Noto Sans", sans-serif;
   text-align: center;
 
@@ -61,4 +61,9 @@ footer button:hover {
   100% {
     cursor: url("../assets/cursor/pointer2.cur"), auto;
   }
+}
+
+#tsparticles {
+  position: absolute;
+  z-index: -1;
 }

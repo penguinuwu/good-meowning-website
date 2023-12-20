@@ -1,4 +1,5 @@
 import { startCursorTrail, stopCursorTrail } from "./cursortrail.mjs";
+import { loadParticles } from "./tsParticles.mjs";
 
 const toggleButtonNode = document.getElementById("toggle-cursor-trail");
 let hasCursorTrails = false;
@@ -44,3 +45,5 @@ toggleCursorTrail();
 
 // add toggle function to button
 toggleButtonNode.addEventListener("click", toggleCursorTrail);
+
+loadParticles();
