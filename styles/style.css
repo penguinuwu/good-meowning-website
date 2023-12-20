@@ -46,6 +46,10 @@ footer {
   margin: auto auto 7% auto;
   animation: 1000ms ease-in fade-in;
 }
+footer button {
+  width: 4em;
+  height: 2em;
+}
 footer button:hover {
   /* cursor animation lol */
   /* https://jordaneldredge.com/blog/rendering-animated-ani-cursors-in-the-browser/ */
