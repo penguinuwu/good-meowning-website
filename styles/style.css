@@ -1,4 +1,6 @@
 html {
+  background-color: lightgray;
+
   /* http://www.rw-designer.com/cursor-set/kawaiikittymd */
   cursor: url("../assets/cursor/default.cur"), default;
 }
