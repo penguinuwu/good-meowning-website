@@ -90,8 +90,10 @@ const startCursorTrail = () => {
  * @param {number} intervalID
  */
 const stopCursorTrail = (abortController, intervalID) => {
-  abortController.abort(); // remove event listeners
   clearInterval(intervalID); // remove game loop
+  if (abortController) {
+    abortController.abort(); // remove event listeners
+  }
 };
 
 export { startCursorTrail, stopCursorTrail };
