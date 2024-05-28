@@ -7,7 +7,7 @@ import { options as linkOptions } from "https://cdn.jsdelivr.net/npm/@tsparticle
 
 async function loadParticles(options) {
   await loadFull(tsParticles);
-  console.debug(await tsParticles.load({ id: "tsparticles", options: options }));
+  await tsParticles.load({ id: "tsparticles", options: options });
 }
 
 // epic effect colour mods

@@ -14,7 +14,7 @@ const startCursorTrail = () => {
     return (event) => {
       coords.x = undefined;
       coords.y = undefined;
-      console.debug(eventType, event);
+      // console.debug(eventType, event);
     };
   };
   document.body.addEventListener("mouseleave", leaveEvent("mouseleave"), {
@@ -29,11 +29,11 @@ const startCursorTrail = () => {
     return (event) => {
       const touch = event.touches.item(0);
       if (touch === null) {
-        console.debug(`${eventType} no movement?`, event);
+        // console.debug(`${eventType} no movement?`, event);
       } else {
         coords.x = touch.clientX;
         coords.y = touch.clientY;
-        console.debug(eventType, coords);
+        // console.debug(eventType, coords);
       }
     };
   };
@@ -50,7 +50,7 @@ const startCursorTrail = () => {
     (event) => {
       coords.x = event.clientX;
       coords.y = event.clientY;
-      console.debug("mousemove", coords.x, coords.y);
+      // console.debug("mousemove", coords.x, coords.y);
     },
     { signal: abortController.signal }
   );
@@ -58,7 +58,7 @@ const startCursorTrail = () => {
   // game loop in 60fps lol
   const intervalID = setInterval(() => {
     if (coords.x === undefined || coords.y === undefined) {
-      console.debug("return", coords);
+      // console.debug("return", coords);
       return;
     }
 

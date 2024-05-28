@@ -8,7 +8,7 @@ let abortController = undefined;
 let intervalID = undefined;
 
 const toggleOff = () => {
-  console.debug("toggling off");
+  // console.debug("toggling off");
 
   // setting this first as a lock kinda lmao
   hasCursorTrails = false;
@@ -22,13 +22,13 @@ const toggleOff = () => {
   stopCursorTrail(abortController, intervalID);
   abortController = undefined;
   intervalID = undefined;
-  console.debug("toggled off", abortController, intervalID);
+  // console.debug("toggled off", abortController, intervalID);
 
   toggleButtonNode.style.color = allOptions.dark.background.color;
 };
 
 const toggleOn = () => {
-  console.debug("toggling on");
+  // console.debug("toggling on");
 
   // setting this first as a lock kinda lmao
   hasCursorTrails = true;
@@ -40,7 +40,7 @@ const toggleOn = () => {
 
   // start cursor trails
   ({ abortController, intervalID } = startCursorTrail());
-  console.debug("toggled on", abortController, intervalID);
+  // console.debug("toggled on", abortController, intervalID);
 
   toggleButtonNode.style.color = "#ff85a2";
 };
@@ -55,7 +55,7 @@ const toggleButton = () => {
     toggleOn();
   } else {
     // just ignore race conditions lmafohohofaohofuc
-    console.debug("broke lol");
+    // console.debug("broke lol");
   }
 };
 
