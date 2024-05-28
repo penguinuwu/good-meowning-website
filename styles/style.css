@@ -19,6 +19,10 @@ body {
   height: 100vh;
 }
 
+span.star {
+  z-index: 3;
+}
+
 div#meow {
   background-color: #fbfdfa;
   width: 80%;
@@ -26,6 +30,7 @@ div#meow {
   border-radius: 5%;
   box-shadow: 0.5em 0.5em 0.5em gray;
   animation: 600ms ease-in fade-in;
+  z-index: 2;
 
   /* unselectable objects */
   /* https://stackoverflow.com/a/4448972/ */
@@ -55,6 +60,7 @@ div#meow > h1 {
 footer {
   margin: auto auto 7% auto;
   animation: 1000ms ease-in fade-in;
+  z-index: 2;
 }
 footer button#nice-button {
   width: 4em;
@@ -81,5 +87,5 @@ footer button#nice-button:hover {
 
 #tsparticles {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
 }
