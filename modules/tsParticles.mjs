@@ -1,9 +1,9 @@
 import {
   loadFull,
   tsParticles,
-} from "https://cdn.jsdelivr.net/npm/tsparticles@3.4.0/esm/bundle.js/+esm";
-import { options as snowOptions } from "https://cdn.jsdelivr.net/npm/@tsparticles/preset-snow@3.0.2/esm/options.js/+esm";
-import { options as linkOptions } from "https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@3.0.2/esm/options.js/+esm";
+} from "https://cdn.jsdelivr.net/npm/tsparticles@3/esm/bundle.js/+esm";
+import { options as snowOptions } from "https://cdn.jsdelivr.net/npm/@tsparticles/preset-snow@3.2.0/esm/options.js/+esm";
+import { options as linkOptions } from "https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@3.2.0/esm/options.js/+esm";
 
 async function loadParticles(options) {
   await loadFull(tsParticles);
